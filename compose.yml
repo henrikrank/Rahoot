@@ -9,5 +9,5 @@ services:
     volumes:
       - ./config:/app/config # Path to your game config
     environment:
-      - WEB_ORIGIN=http://localhost:3000
-      - SOCKET_URL=http://localhost:3001
+      - WEB_ORIGIN=https://quiz.henrikrank.ee
+      - SOCKET_URL=https://quiz.henrikrank.ee:3001
