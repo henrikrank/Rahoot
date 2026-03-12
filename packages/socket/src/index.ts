@@ -15,10 +15,10 @@ const io: Server = new ServerIO({
 Config.init()
 
 const registry = Registry.getInstance()
-const port = 3001
+const port = Number(env.SOCKET_PORT ?? env.SOCKER_PORT ?? "3001")
 
 console.log(`Socket server running on port ${port}`)
-io.listen(Number(port))
+io.listen(port)
 
 io.on("connection", (socket) => {
   console.log(

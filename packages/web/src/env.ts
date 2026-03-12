@@ -4,7 +4,7 @@ import { z } from "zod"
 const env = createEnv({
   server: {
     WEB_ORIGIN: z.string().default("https://quiz.henrikrank.ee"),
-    SOCKET_URL: z.string().default("https://quiz.henrikrank.ee:3001"),
+    SOCKET_URL: z.string().default("https://quiz.henrikrank.ee"),
   },
 
   runtimeEnv: {

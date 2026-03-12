@@ -46,6 +46,8 @@ You can find the docker compose configuration in the repository:
 docker compose up -d
 ```
 
+For HTTPS deployments, keep the browser on the public site origin and proxy `/socket.io` to the internal socket server port. Do not point browsers at `https://your-domain:3001` unless that port is actually serving TLS.
+
 Or using Docker directly:
 
 ```bash
@@ -55,6 +57,7 @@ docker run -d \
   -v ./config:/app/config \
   -e WEB_ORIGIN=http://localhost:3000 \
   -e SOCKET_URL=http://localhost:3001 \
+  -e SOCKET_PORT=3001 \
   ralex91/rahoot:latest
 ```
 
@@ -71,6 +74,16 @@ The application will be available at:
 
 - Web Interface: http://localhost:3000
 - WebSocket Server: ws://localhost:3001
+
+For a reverse-proxied HTTPS setup, use:
+
+```env
+WEB_ORIGIN=https://your-domain
+SOCKET_URL=https://your-domain
+SOCKET_PORT=3001
+```
+
+Then forward `/socket.io` on your public HTTPS host to the internal socket server.
 
 ### 🛠️ Without Docker
 

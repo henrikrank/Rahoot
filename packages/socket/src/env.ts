@@ -4,11 +4,13 @@ import { z } from "zod/v4"
 const env = createEnv({
   server: {
     WEB_ORIGIN: z.string().optional().default("https://quiz.henrikrank.ee"),
-    SOCKER_PORT: z.string().optional().default("3001"),
+    SOCKET_PORT: z.string().optional(),
+    SOCKER_PORT: z.string().optional(),
   },
 
   runtimeEnv: {
     WEB_ORIGIN: process.env.WEB_ORIGIN,
+    SOCKET_PORT: process.env.SOCKET_PORT ?? process.env.SOCKER_PORT,
     SOCKER_PORT: process.env.SOCKER_PORT,
   },
 })

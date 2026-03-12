@@ -10,4 +10,5 @@ services:
       - ./config:/app/config # Path to your game config
     environment:
       - WEB_ORIGIN=https://quiz.henrikrank.ee
-      - SOCKET_URL=https://quiz.henrikrank.ee:3001
+      - SOCKET_URL=https://quiz.henrikrank.ee
+      - SOCKET_PORT=3001
