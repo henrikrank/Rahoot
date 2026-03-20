@@ -9,6 +9,7 @@
         "Kevin",
         "Karl"
       ],
+      "image": "/images/heisenberg.gif",
       "solution": 2,
       "cooldown": 5,
       "time": 20
@@ -58,6 +59,7 @@
         "Rallu",
         "Tipsi"
       ],
+      "image": "/images/nickname.jpg",
       "solution": 3,
       "cooldown": 5,
       "time": 20
@@ -71,7 +73,7 @@
         "Hermione"
       ],
       "image": "/images/crush.png",
-      "solution": 3,
+      "solution": 2,
       "cooldown": 5,
       "time": 20
     },
@@ -83,6 +85,7 @@
         "6-7h",
         "7+"
       ],
+      "image": "/images/subway.gif",
       "solution": 1,
       "cooldown": 5,
       "time": 20
@@ -95,6 +98,7 @@
         "Nõmme nõlvad",
         "Mount Everest"
       ],
+      "image": "/images/alpinist.webp",
       "solution": 2,
       "cooldown": 5,
       "time": 20
@@ -117,8 +121,9 @@
         "Arnold Rüütliga",
         "Garry Kasparoviga",
         "Ivo Linnaga",
-        "Mihkel Raudiga"
+        "Mihkel Rauaga"
       ],
+      "image": "/images/male.JPG",
       "solution": 1,
       "cooldown": 5,
       "time": 20
