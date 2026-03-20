@@ -146,6 +146,18 @@
       "solution": 2,
       "cooldown": 5,
       "time": 20
+    },
+    {
+      "question": "Kes on Eesti seksikaim mees?",
+      "answers": [
+        "Henrik",
+        "Hernik",
+        "Erki Nool",
+        "Herbik"
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 20
     }
   ]
 }
