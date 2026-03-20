@@ -1,0 +1,176 @@
+{
+  "subject": "Henriku sünna 2026",
+  "questions": [
+    {
+      "question": "Mille vastu olen ma allergiline?",
+      "answers": [
+        "Peet",
+        "Õun",
+        "Bullshit",
+        "Mango"
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Milline neist ei ole olnud Krõpsiku hüüdnimi?",
+      "answers": [
+        "Eskiboob",
+        "Snõõts",
+        "Õõts",
+        "Põmm"
+      ],
+      "image": "/images/kr6psik.JPG",
+      "solution": 1,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis oli kõige esimene programm, mille ma progesin?",
+      "answers": [
+        "Muusikapleier",
+        "Kalkulaator, mis mõõdab, mitu suitsu olen elu jooksul teinud",
+        "Montonio",
+        "Kidrahäälestaja"
+      ],
+      "image": "/images/computer.JPG",
+      "solution": 1,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis on mu läbi aegade lemmikmeem?",
+      "answers": [
+        "Uganda Knuckles",
+        "In the clurb we all fam",
+        "Shooting Stars",
+        "Trallalero Trallala"
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis oli mu kooliaegne hüüdnimi?",
+      "answers": [
+        "Onu Heino",
+        "Enni",
+        "Rallu",
+        "Tipsi"
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Kes oli mu esimene crush?",
+      "answers": [
+        "Bubbles",
+        "Cleo H2O-st",
+        "Raven",
+        "Hermione"
+      ],
+      "image": "/images/crush.png",
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis on mu selle kuu screen time olnud? (telos scrollimist, mitte tööasju)",
+      "answers": [
+        "1-3h",
+        "4-6h",
+        "6-7h",
+        "7+"
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Millist neist hobidest ma ei ole proovinud?",
+      "answers": [
+        "Keraamika",
+        "Purjelauasõit",
+        "Korvpall",
+        "Mäesuusatamine"
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Millist spordiala ma konkreetselt HEIDIN?",
+      "answers": [
+        "Rahvatants",
+        "Ronimine",
+        "Discgolf",
+        "Laskesuusatamine"
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Millist spordiala ma konkreetselt HEIDIN?",
+      "answers": [
+        "Rahvatants",
+        "Ronimine",
+        "Discgolf",
+        "Laskesuusatamine"
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis lemmiklooma mul pole kunagi olnud?",
+      "answers": [
+        "Kass",
+        "Koer",
+        "Jänes",
+        "Rott"
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mis lemmiklooma mul pole kunagi olnud?",
+      "answers": [
+        "Kass",
+        "Koer",
+        "Jänes",
+        "Rott"
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mitu tätoveeringut mul on?",
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 20
+    },
+    {
+      "question": "Mitu tätoveeringut mul on?",
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 20
+    }
+  ]
+}

@@ -2,11 +2,12 @@
 
 import { ManagerStatusDataMap } from "@rahoot/common/types/game/status"
 import AnswerButton from "@rahoot/web/components/AnswerButton"
+import { useQuestionStore } from "@rahoot/web/stores/question"
 import {
   ANSWERS_COLORS,
   ANSWERS_ICONS,
-  SFX_ANSWERS_MUSIC,
   SFX_RESULTS_SOUND,
+  getAnswersMusicTrack,
 } from "@rahoot/web/utils/constants"
 import { calculatePercentages } from "@rahoot/web/utils/score"
 import clsx from "clsx"
@@ -20,39 +21,32 @@ type Props = {
 const Responses = ({
   data: { question, answers, responses, correct },
 }: Props) => {
+  const { questionStates } = useQuestionStore()
   const [percentages, setPercentages] = useState<Record<string, string>>({})
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+  const answersMusicTrack = getAnswersMusicTrack(questionStates?.current)
 
   const [sfxResults] = useSound(SFX_RESULTS_SOUND, {
     volume: 0.2,
   })
 
-  const [playMusic, { stop: stopMusic }] = useSound(SFX_ANSWERS_MUSIC, {
+  const [playMusic, { stop: stopMusic }] = useSound(answersMusicTrack, {
     volume: 0.2,
-    onplay: () => {
-      setIsMusicPlaying(true)
-    },
-    onend: () => {
-      setIsMusicPlaying(false)
-    },
+    interrupt: true,
+    loop: true,
   })
 
   useEffect(() => {
-    stopMusic()
-    sfxResults()
-
     setPercentages(calculatePercentages(responses))
-  }, [responses, playMusic, stopMusic, sfxResults])
+  }, [responses])
 
   useEffect(() => {
-    if (!isMusicPlaying) {
-      playMusic()
+    sfxResults()
+    playMusic()
+
+    return () => {
+      stopMusic()
     }
-  }, [isMusicPlaying, playMusic])
-
-  useEffect(() => {
-    stopMusic()
-  }, [playMusic, stopMusic])
+  }, [playMusic, sfxResults, stopMusic])
 
   return (
     <div className="flex h-full flex-1 flex-col justify-between">

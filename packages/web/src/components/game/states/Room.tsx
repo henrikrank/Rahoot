@@ -4,19 +4,26 @@ import { Player } from "@rahoot/common/types/game"
 import { ManagerStatusDataMap } from "@rahoot/common/types/game/status"
 import { useEvent, useSocket } from "@rahoot/web/contexts/socketProvider"
 import { useManagerStore } from "@rahoot/web/stores/manager"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import QRCode from "react-qr-code"
 
 type Props = {
   data: ManagerStatusDataMap["SHOW_ROOM"]
 }
 
+const backgroundVideoUrl = new URL(
+  "../../../assets/kahoot-remix.mp4",
+  import.meta.url,
+).toString()
+
 const Room = ({ data: { text, inviteCode } }: Props) => {
   const { gameId } = useManagerStore()
   const { socket, webUrl } = useSocket()
   const { players } = useManagerStore()
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const [playerList, setPlayerList] = useState<Player[]>(players)
   const [totalPlayers, setTotalPlayers] = useState(0)
+  const [showEnableAudio, setShowEnableAudio] = useState(false)
 
   useEvent("manager:newPlayer", (player) => {
     setPlayerList([...playerList, player])
@@ -45,9 +52,72 @@ const Room = ({ data: { text, inviteCode } }: Props) => {
     })
   }
 
+  useEffect(() => {
+    const video = videoRef.current
+
+    if (!video) {
+      return
+    }
+
+    video.muted = false
+    video.volume = 1
+
+    void video.play().then(
+      () => {
+        setShowEnableAudio(false)
+      },
+      () => {
+        video.muted = true
+        void video.play()
+        setShowEnableAudio(true)
+      },
+    )
+  }, [])
+
+  const handleEnableAudio = async () => {
+    const video = videoRef.current
+
+    if (!video) {
+      return
+    }
+
+    video.muted = false
+    video.volume = 1
+
+    try {
+      await video.play()
+      setShowEnableAudio(false)
+    } catch {
+      setShowEnableAudio(true)
+    }
+  }
+
   return (
     <section className="relative mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-2">
-      <div className="mb-10 flex flex-col-reverse items-center gap-3 md:flex-row md:items-stretch">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <video
+          ref={videoRef}
+          className="h-full w-full object-cover"
+          src={backgroundVideoUrl}
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+        />
+        <div className="absolute inset-0 bg-black/45" />
+      </div>
+
+      {showEnableAudio && (
+        <button
+          className="shadow-inset bg-primary absolute top-4 right-4 z-20 rounded-md px-4 py-2 font-bold text-white"
+          onClick={handleEnableAudio}
+          type="button"
+        >
+          Enable music
+        </button>
+      )}
+
+      <div className="relative z-10 mb-10 flex flex-col-reverse items-center gap-3 md:flex-row md:items-stretch">
         <div className="flex flex-col gap-3 md:flex-row">
           <div className="game-pin-out flex flex-col justify-center rounded-md bg-white px-6 py-4">
             <p className="text-2xl font-bold">Join the game at</p>
@@ -68,17 +138,17 @@ const Room = ({ data: { text, inviteCode } }: Props) => {
         </div>
       </div>
 
-      <h2 className="mb-4 text-4xl font-bold text-white drop-shadow-lg">
+      <h2 className="relative z-10 mb-4 text-4xl font-bold text-white drop-shadow-lg">
         {text}
       </h2>
 
-      <div className="mb-6 flex items-center justify-center rounded-full bg-black/40 px-6 py-3">
+      <div className="relative z-10 mb-6 flex items-center justify-center rounded-full bg-black/40 px-6 py-3">
         <span className="text-2xl font-bold text-white drop-shadow-md">
           Players Joined: {totalPlayers}
         </span>
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="relative z-10 flex flex-wrap gap-3">
         {playerList.map((player) => (
           <div
             key={player.id}

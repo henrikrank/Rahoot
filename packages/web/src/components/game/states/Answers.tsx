@@ -4,11 +4,12 @@ import { CommonStatusDataMap } from "@rahoot/common/types/game/status"
 import AnswerButton from "@rahoot/web/components/AnswerButton"
 import { useEvent, useSocket } from "@rahoot/web/contexts/socketProvider"
 import { usePlayerStore } from "@rahoot/web/stores/player"
+import { useQuestionStore } from "@rahoot/web/stores/question"
 import {
   ANSWERS_COLORS,
   ANSWERS_ICONS,
-  SFX_ANSWERS_MUSIC,
   SFX_ANSWERS_SOUND,
+  getAnswersMusicTrack,
 } from "@rahoot/web/utils/constants"
 import clsx from "clsx"
 import { useParams } from "next/navigation"
@@ -25,15 +26,17 @@ const Answers = ({
   const { gameId }: { gameId?: string } = useParams()
   const { socket } = useSocket()
   const { player } = usePlayerStore()
+  const { questionStates } = useQuestionStore()
 
   const [cooldown, setCooldown] = useState(time)
   const [totalAnswer, setTotalAnswer] = useState(0)
+  const answersMusicTrack = getAnswersMusicTrack(questionStates?.current)
 
   const [sfxPop] = useSound(SFX_ANSWERS_SOUND, {
     volume: 0.1,
   })
 
-  const [playMusic, { stop: stopMusic }] = useSound(SFX_ANSWERS_MUSIC, {
+  const [playMusic, { stop: stopMusic }] = useSound(answersMusicTrack, {
     volume: 0.2,
     interrupt: true,
     loop: true,
@@ -64,7 +67,7 @@ const Answers = ({
     return () => {
       stopMusic()
     }
-  }, [playMusic])
+  }, [audio, video, playMusic, stopMusic])
 
   useEvent("game:cooldown", (sec) => {
     setCooldown(sec)

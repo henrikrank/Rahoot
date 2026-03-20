@@ -52,7 +52,15 @@ export const GAME_STATE_COMPONENTS_MANAGER = {
   [STATUS.FINISHED]: Podium,
 }
 
-export const SFX_ANSWERS_MUSIC = "/sounds/answersMusic.mp3"
+export const SFX_ANSWERS_MUSIC_TRACK_COUNT = 5
+
+export const getAnswersMusicTrack = (questionNumber = 1) => {
+  const trackNumber =
+    ((Math.max(questionNumber, 1) - 1) % SFX_ANSWERS_MUSIC_TRACK_COUNT) + 1
+
+  return `/sounds/answersMusic-${trackNumber}.mp3`
+}
+
 export const SFX_ANSWERS_SOUND = "/sounds/answersSound.mp3"
 export const SFX_RESULTS_SOUND = "/sounds/results.mp3"
 export const SFX_SHOW_SOUND = "/sounds/show.mp3"
