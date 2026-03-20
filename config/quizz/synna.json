@@ -88,14 +88,14 @@
       "time": 20
     },
     {
-      "question": "Millist neist hobidest ma ei ole proovinud?",
+      "question": "Kust mäest kukkus Henrik alla, kui ta esimest korda elus end täis jõi?",
       "answers": [
-        "Keraamika",
-        "Purjelauasõit",
-        "Korvpall",
-        "Mäesuusatamine"
+        "Kuutsemägi",
+        "Munamägi",
+        "Nõmme nõlvad",
+        "Mount Everest"
       ],
-      "solution": 3,
+      "solution": 2,
       "cooldown": 5,
       "time": 20
     },
@@ -112,12 +112,12 @@
       "time": 20
     },
     {
-      "question": "Mis lemmiklooma mul pole kunagi olnud?",
+      "question": "Kellega mängis Henrik 2007. aastal malet?",
       "answers": [
-        "Kass",
-        "Koer",
-        "Jänes",
-        "Rott"
+        "Arnold Rüütliga",
+        "Garry Kasparoviga",
+        "Ivo Linnaga",
+        "Mihkel Raudiga"
       ],
       "solution": 1,
       "cooldown": 5,
