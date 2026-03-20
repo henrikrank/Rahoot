@@ -1,7 +1,7 @@
 "use client"
 
 import { Status } from "@rahoot/common/types/game/status"
-import background from "@rahoot/web/assets/background.webp"
+import background from "@rahoot/web/assets/background-neon.gif"
 import Button from "@rahoot/web/components/Button"
 import Loader from "@rahoot/web/components/Loader"
 import { useEvent, useSocket } from "@rahoot/web/contexts/socketProvider"

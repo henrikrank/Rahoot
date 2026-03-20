@@ -113,18 +113,6 @@
       "time": 20
     },
     {
-      "question": "Millist spordiala ma konkreetselt HEIDIN?",
-      "answers": [
-        "Rahvatants",
-        "Ronimine",
-        "Discgolf",
-        "Laskesuusatamine"
-      ],
-      "solution": 3,
-      "cooldown": 5,
-      "time": 20
-    },
-    {
       "question": "Mis lemmiklooma mul pole kunagi olnud?",
       "answers": [
         "Kass",
@@ -132,19 +120,7 @@
         "Jänes",
         "Rott"
       ],
-      "solution": 2,
-      "cooldown": 5,
-      "time": 20
-    },
-    {
-      "question": "Mis lemmiklooma mul pole kunagi olnud?",
-      "answers": [
-        "Kass",
-        "Koer",
-        "Jänes",
-        "Rott"
-      ],
-      "solution": 2,
+      "solution": 1,
       "cooldown": 5,
       "time": 20
     },
@@ -161,14 +137,14 @@
       "time": 20
     },
     {
-      "question": "Mitu tätoveeringut mul on?",
+      "question": "Kui kaua läks mul eelmisel aastal aega, et kõigile sünnipäevasoovidele vastata?",
       "answers": [
-        "0",
-        "1",
-        "2",
-        "3"
+        "Kohe vastasin ära, loog",
+        "Mingi 2 päeva",
+        "Khm, mingi kuu aega",
+        "Pole seni vastand lol"
       ],
-      "solution": 0,
+      "solution": 2,
       "cooldown": 5,
       "time": 20
     }
