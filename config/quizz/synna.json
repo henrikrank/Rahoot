@@ -2,26 +2,25 @@
   "subject": "Henriku sünna 2026",
   "questions": [
     {
-      "question": "Mille vastu olen ma allergiline?",
+      "question": "Mis nime mu ema EI KAALUNUD mulle panna?",
       "answers": [
-        "Peet",
-        "Õun",
-        "Bullshit",
-        "Mango"
+        "Markus",
+        "Herbert",
+        "Kevin",
+        "Karl"
       ],
-      "solution": 1,
+      "solution": 2,
       "cooldown": 5,
       "time": 20
     },
     {
-      "question": "Milline neist ei ole olnud Krõpsiku hüüdnimi?",
+      "question": "Mille vastu olen ma allergiline?",
       "answers": [
-        "Eskiboob",
-        "Snõõts",
-        "Õõts",
-        "Põmm"
+        "Peet",
+        "Õun",
+        "Banaan",
+        "Mango"
       ],
-      "image": "/images/kr6psik.JPG",
       "solution": 1,
       "cooldown": 5,
       "time": 20
@@ -84,7 +83,7 @@
         "6-7h",
         "7+"
       ],
-      "solution": 2,
+      "solution": 1,
       "cooldown": 5,
       "time": 20
     },
@@ -108,7 +107,7 @@
         "Discgolf",
         "Laskesuusatamine"
       ],
-      "solution": 3,
+      "solution": 2,
       "cooldown": 5,
       "time": 20
     },
